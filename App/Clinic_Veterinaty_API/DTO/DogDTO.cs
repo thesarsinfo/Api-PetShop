@@ -29,7 +29,6 @@ namespace Clinic_Veterinaty_API.DTO
         public DateTime BirthDate { get; set; }
 
         [Required (ErrorMessage = "Client Id field is required")]    
-        [Range(10000000000,99999999999,ErrorMessage = "Invalid CPF,The cpf number must contain only 11 numbers")]
         public ulong ClientId { get; set; }
 
     }

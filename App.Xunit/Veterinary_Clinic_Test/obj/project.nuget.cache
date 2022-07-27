@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "50P8esaSMxtZao4ssvIPQ2ePtHhc0tXD5NNyBabaSre2jgwLzZ1FUWjpcMoGMZwNFFkmr+Rs5sDgMeM5GZkkBw==",
+  "dgSpecHash": "zJ3TMqtb57xMVyOC623vWDPD0fOYv46ixOy0HOWIbVt9Q/8DYumWKdl6nDal2LQVDZUjD0+/JZZS3nasICUCrA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\App.Xunit\\Veterinary_Clinic_Test\\Veterinary_Clinic_Test.csproj",
+  "projectFilePath": "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\Api-PetShop\\App.Xunit\\Veterinary_Clinic_Test\\Veterinary_Clinic_Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\TESV\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\TESV\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.17\\microsoft.aspnetcore.authentication.jwtbearer.5.0.17.nupkg.sha512",

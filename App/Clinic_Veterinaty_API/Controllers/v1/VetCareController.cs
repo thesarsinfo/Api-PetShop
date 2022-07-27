@@ -95,6 +95,50 @@ namespace Clinic_Veterinaty_API.Controllers.v1
 
             return StatusCode(201,"O atendimento foi criado com sucesso");
         }
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> Patch(int id, VetCareUpdateDTO vetCareUpdateDTO)
+        {
+            try
+            {
+                double age = 0;
+                var vetCall = await _vetCareRepository.GetVetCallById(id);
+                if (vetCall == null) return StatusCode(404, "Consulta não encontrada");
+                
+                var dog = await _vetCareRepository.GetDogByClientIdDogId(vetCareUpdateDTO.ClientId,vetCareUpdateDTO.DogId);
+                
+                if (dog != null)
+                {
+                    age = DateTime.Now.Subtract(dog.BirthDate).TotalDays / 365.0;
+                    if (age < 0) return StatusCode(400,"Por favor atualize a idade de nascimento do cachorro");
+                }
+                var client = await _vetCareRepository.GetClientById(vetCareUpdateDTO.ClientId);
+                var vet = await _vetCareRepository.GetByIdVetAsync(vetCareUpdateDTO.VetId);
+                
+
+                vetCall.Clients = client ?? vetCall.Clients;
+                vetCall.Vets = vet ?? vetCall.Vets;
+                vetCall.Dogs = dog ?? vetCall.Dogs;
+                vetCall.Age = age != 0 ? age : vetCall.Age;
+                vetCall.Weight = vetCareUpdateDTO.Weight != 0 ? vetCareUpdateDTO.Weight : vetCall.Weight;
+                vetCall.LastDiagnosis = vetCareUpdateDTO.LastDiagnosis ?? vetCall.LastDiagnosis;
+                vetCall.Coments = vetCareUpdateDTO.Coments ?? vetCall.Coments;
+
+                if(!vetCareUpdateDTO.Weight.Equals(null))
+                {
+                   var dogUpdate = _vetCareRepository.GetDogByClientIdDogId(vetCall.Clients.CPF,vetCall.Dogs.Id);
+                    _vetCareRepository.Update(dogUpdate);
+                    await _vetCareRepository.SaveChangesAsync();
+                }
+                _vetCareRepository.Add(vetCall);
+                await _vetCareRepository.SaveChangesAsync();                
+                return StatusCode(204,"Cliente atualizado com sucesso");
+            }
+            catch (Exception)
+            {
+                return StatusCode(500,"Error de processamento interno");
+
+            }
+        }
 
     }
 }

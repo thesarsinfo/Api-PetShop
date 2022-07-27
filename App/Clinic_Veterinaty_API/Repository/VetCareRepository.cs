@@ -44,6 +44,19 @@ namespace Clinic_Veterinaty_API.Repository
         {
             return await _context.Vets.Where(vet => vet.CRMV == id).FirstOrDefaultAsync();
         }
+        public async Task<VetCare> GetVetCallById(int id)
+        {
+            return await _context.VetCare
+                            .Include(cli => cli.Clients)
+                            .Include(vet => vet.Vets)
+                            .Include(dog => dog.Dogs)   
+                            .Where(call => call.Id == id)
+                            .FirstOrDefaultAsync();
+        }
+        public async Task<Client> GetClientById(ulong id)
+        {
+            return await _context.Clients.Where(cli => cli.CPF == id).FirstOrDefaultAsync();
+        }
     
     }
 }

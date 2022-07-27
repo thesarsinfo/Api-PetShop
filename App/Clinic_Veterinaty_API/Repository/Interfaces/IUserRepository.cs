@@ -9,5 +9,6 @@ namespace Clinic_Veterinaty_API.Repository.Interfaces
     public interface IUserRepository : IBaseRepository
     {
         public Task<User> GetEmailUser(string email);
+        public Task<User> GetUserId(ulong id);
     }
 }

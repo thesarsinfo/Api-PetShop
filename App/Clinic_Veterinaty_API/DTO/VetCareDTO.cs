@@ -8,10 +8,8 @@ namespace Clinic_Veterinaty_API.DTO
         [Required]
         public int Id { get; set; }
         [Required(ErrorMessage ="CPF Client is required")]
-        [Range(10000000000,99999999999,ErrorMessage = "Invalid CPF,The cpf number must contain only 11 numbers")]      
         public ulong ClientId { get; set; }
         [Required (ErrorMessage = "Vet CRMV Field is required")]
-        [Range(1,int.MaxValue,ErrorMessage = "The vet id must be 1 to 21000000000")]
 
         public int VetId { get; set; }
         [Required (ErrorMessage = "Dog Id Field is required")]

@@ -12,5 +12,7 @@ namespace Clinic_Veterinaty_API.Repository.Interfaces
         public Task<Vet> GetByIdVetAsync(int id);
         public Task<IEnumerable<VetCare>> GetAllVetCallsByClient(ulong cpf);
         public Task<IEnumerable<VetCare>> GetAllVetCallsByVet(ulong crmv);
+        public Task<VetCare> GetVetCallById(int id);
+        public Task<Client> GetClientById(ulong id);
     }
 }

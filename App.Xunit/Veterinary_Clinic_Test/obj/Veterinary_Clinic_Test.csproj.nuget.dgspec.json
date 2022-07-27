@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\App.Xunit\\Veterinary_Clinic_Test\\Veterinary_Clinic_Test.csproj": {}
+    "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\Api-PetShop\\App.Xunit\\Veterinary_Clinic_Test\\Veterinary_Clinic_Test.csproj": {}
   },
   "projects": {
-    "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\App.Xunit\\Veterinary_Clinic_Test\\Veterinary_Clinic_Test.csproj": {
+    "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\Api-PetShop\\App.Xunit\\Veterinary_Clinic_Test\\Veterinary_Clinic_Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\App.Xunit\\Veterinary_Clinic_Test\\Veterinary_Clinic_Test.csproj",
+        "projectUniqueName": "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\Api-PetShop\\App.Xunit\\Veterinary_Clinic_Test\\Veterinary_Clinic_Test.csproj",
         "projectName": "Veterinary_Clinic_Test",
-        "projectPath": "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\App.Xunit\\Veterinary_Clinic_Test\\Veterinary_Clinic_Test.csproj",
+        "projectPath": "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\Api-PetShop\\App.Xunit\\Veterinary_Clinic_Test\\Veterinary_Clinic_Test.csproj",
         "packagesPath": "C:\\Users\\TESV\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\App.Xunit\\Veterinary_Clinic_Test\\obj\\",
+        "outputPath": "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\Api-PetShop\\App.Xunit\\Veterinary_Clinic_Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\TESV\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\App\\Clinic_Veterinaty_API\\Clinic_Veterinaty_API.csproj": {
-                "projectPath": "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\App\\Clinic_Veterinaty_API\\Clinic_Veterinaty_API.csproj"
+              "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\Api-PetShop\\App\\Clinic_Veterinaty_API\\Clinic_Veterinaty_API.csproj": {
+                "projectPath": "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\Api-PetShop\\App\\Clinic_Veterinaty_API\\Clinic_Veterinaty_API.csproj"
               }
             }
           }
@@ -82,14 +82,14 @@
         }
       }
     },
-    "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\App\\Clinic_Veterinaty_API\\Clinic_Veterinaty_API.csproj": {
+    "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\Api-PetShop\\App\\Clinic_Veterinaty_API\\Clinic_Veterinaty_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\App\\Clinic_Veterinaty_API\\Clinic_Veterinaty_API.csproj",
+        "projectUniqueName": "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\Api-PetShop\\App\\Clinic_Veterinaty_API\\Clinic_Veterinaty_API.csproj",
         "projectName": "Clinic_Veterinaty_API",
-        "projectPath": "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\App\\Clinic_Veterinaty_API\\Clinic_Veterinaty_API.csproj",
+        "projectPath": "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\Api-PetShop\\App\\Clinic_Veterinaty_API\\Clinic_Veterinaty_API.csproj",
         "packagesPath": "C:\\Users\\TESV\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\App\\Clinic_Veterinaty_API\\obj\\",
+        "outputPath": "c:\\Users\\TESV\\OneDrive - GFT Technologies SE\\Documents\\Treinamento GFT\\apitgithub\\Api-PetShop\\App\\Clinic_Veterinaty_API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\TESV\\AppData\\Roaming\\NuGet\\NuGet.Config"

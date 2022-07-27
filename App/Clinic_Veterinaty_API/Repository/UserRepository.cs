@@ -17,6 +17,10 @@ namespace Clinic_Veterinaty_API.Repository
         {
             _context = context;
         }
+        public async Task<User> GetUserId(ulong id)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Identification == id);
+        }
         public async Task<User> GetEmailUser(string email)
         {
             return await _context.Users.FirstOrDefaultAsync(u => u.Email.Equals(email));

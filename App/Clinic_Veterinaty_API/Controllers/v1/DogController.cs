@@ -144,18 +144,17 @@ namespace Clinic_Veterinaty_API.Controllers.v1
          public async Task<IActionResult> Patch(int idDog, DogUpdateDTO dogUpdateDTO)
          {
              try
-            {
-                var client  = await _dogRepository.GetByIdClientAsync(dogUpdateDTO.ClientId);
-                
+            {                
                 var dog = await _dogRepository.GetDogById(idDog);
                 if (dog != null)
                 {
+                    var client  = await _dogRepository.GetByIdClientAsync(dogUpdateDTO.ClientId);
 
                     dog.Name = dogUpdateDTO.Name ?? dog.Name;
                     dog.DogBreed = dogUpdateDTO.DogBreed ?? dog.DogBreed;
                     dog.DogWeight = dogUpdateDTO.DogWeight != 0 ? dogUpdateDTO.DogWeight: dog.DogWeight;
                     dog.DogHeight = dogUpdateDTO.DogHeight != 0 ? dogUpdateDTO.DogHeight: dog.DogHeight;
-                    dog.BirthDate = dogUpdateDTO.BirthDate != null ? dogUpdateDTO.BirthDate : dog.BirthDate;
+                    dog.BirthDate = dogUpdateDTO.BirthDate.Equals(null) ? dogUpdateDTO.BirthDate : dog.BirthDate;
                     dog.Clients = client ?? dog.Clients;
 
                      _dogRepository.Update(dog);
