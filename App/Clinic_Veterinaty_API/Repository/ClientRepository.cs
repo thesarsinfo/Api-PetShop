@@ -19,7 +19,7 @@ namespace Clinic_Veterinaty_API.Repository
         }
         public async Task<Client> GetByIdClientAsync(ulong id)
         {
-            return await _context.Clients.Where(x => x.CPF == id).FirstOrDefaultAsync();
+            return await _context.Clients.Where(x => x.CPF == id && x.Status == true).FirstOrDefaultAsync();
         }
         public async Task <IEnumerable<Client>> GetAllByIdClientAsync()
         {

@@ -19,9 +19,7 @@ namespace Clinic_Veterinaty_API.DTO
         [Required (ErrorMessage = "Vet Address Field is required")]
         [MinLength(3,ErrorMessage ="Vet Address needs 3 minimum characters in length")]
         public string Address { get; set; }   
-        [Required (ErrorMessage = "Vet Address Field is required")]
-        [EmailAddress]
-        public string Email {get;set;}      
+    
         
     }
 }

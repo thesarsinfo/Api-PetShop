@@ -79,11 +79,13 @@ namespace Clinic_Veterinaty_API.Controllers.v1
                         {
                             claims.Add(new Claim("roleJob",user.JobRole));
                             claims.Add(new Claim("id",user.Identification.ToString()));
+                            claims.Add(new Claim("emailuser", user.Email));
                         }
                         else
                         {
                             claims.Add(new Claim("roleJob",user.JobRole)) ; 
                             claims.Add(new Claim("id",user.Identification.ToString()));
+                            claims.Add(new Claim("emailuser", user.Email));
                         }                                
                        
                        
@@ -122,7 +124,7 @@ namespace Clinic_Veterinaty_API.Controllers.v1
                 var identification = ulong.Parse(HttpContext.User.Claims.FirstOrDefault(claim => claim.Type.ToString()
                                 .Equals("id",StringComparison.InvariantCultureIgnoreCase)).Value);
                 var user = await _userRepository.GetUserId(identification);
-                var userEmail = _userRepository.GetEmailUser(userUpdateDTO.Email);
+                var userEmail = await _userRepository.GetEmailUser(userUpdateDTO.Email.ToUpper());
                 if(user == null) return StatusCode(404,"Usuário não encontrado");
                 if(userEmail != null) return StatusCode(400,"Esse email informado já existe");
 
@@ -133,7 +135,7 @@ namespace Clinic_Veterinaty_API.Controllers.v1
                 user.JobRole = userUpdateDTO.JobRole;
                 _userRepository.Update(user);
                 await _userRepository.SaveChangesAsync();
-                return StatusCode (204,"Usuário atualizado com sucesso");
+                return StatusCode (200,"Usuário atualizado com sucesso");
             }
             catch
             {

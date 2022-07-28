@@ -23,7 +23,7 @@ namespace Clinic_Veterinaty_API.Repository
         }
         public async Task<User> GetEmailUser(string email)
         {
-            return await _context.Users.FirstOrDefaultAsync(u => u.Email.Equals(email));
+            return await _context.Users.Where(em => em.Email == email).FirstOrDefaultAsync();
         }
 
     }

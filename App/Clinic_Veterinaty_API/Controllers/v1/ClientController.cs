@@ -68,15 +68,19 @@ namespace Clinic_Veterinaty_API.Controllers.v1
                     var cpf = ulong.Parse(HttpContext.User.Claims.FirstOrDefault(claim => claim.Type.ToString()
                                 .Equals("id",StringComparison.InvariantCultureIgnoreCase)).Value);
                     var clientSearch = await _clientRepository.GetByIdClientAsync(cpf);
+                    
                     if (clientSearch != null) 
                         return StatusCode(400,"A conta com essa id já foi cadastrada");
+                    
+                    var email = HttpContext.User.Claims.FirstOrDefault(claim => claim.Type
+                                .Equals("email",StringComparison.InvariantCultureIgnoreCase)).Value;
 
                     Client client = new();                    
                     client.CPF = cpf;
                     client.Name = clientDTO.Name;
                     client.LastName = clientDTO.LastName;
                     client.Address = clientDTO.Address;
-                    client.Email = clientDTO.Email;
+                    client.Email = email;
                     client.Status = true;
 
                     _clientRepository.Add(client);
@@ -111,7 +115,7 @@ namespace Clinic_Veterinaty_API.Controllers.v1
                     client.Email = clientDTO.Email ?? client.Email;
                     _clientRepository.Update(client);
                     await _clientRepository.SaveChangesAsync();
-                    return StatusCode(204,"O registro do cliente foi atualizado");
+                    return StatusCode(200,"O registro do cliente foi atualizado");
                 }
                 else
                 {                    

@@ -10,17 +10,14 @@ namespace Clinic_Veterinaty_API.DTO
     {
   
         [Required]
-        [MinLength(3,ErrorMessage ="Customer name needs 3 minimum characters in length")]
+        [MinLength(3,ErrorMessage ="O nome do cliente deve conter no mínimo 3 caracteres")]
         public string Name { get; set; }
         [Required]
-        [MinLength(3,ErrorMessage ="Customer name needs 3 minimum characters in length")]
+        [MinLength(3,ErrorMessage ="O sobrenome do cliente deve conter no mínimo 3 caracteres")]
         public string LastName { get; set; }  
-        [Required]     
-        [MinLength(3,ErrorMessage ="Customer name needs 3 minimum characters in length")]
-        public string Address { get; set; }   
-        [Required]
-        [EmailAddress]
-        public string Email {get;set;}                     
+        [Required(ErrorMessage = "O endereço do cliente é requerido")]     
+        [MinLength(3,ErrorMessage ="O endereço do cliente deve conter no mínimo 3 caracteres")]
+        public string Address { get; set; }                     
         
     }
 }

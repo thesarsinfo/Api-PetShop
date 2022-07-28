@@ -162,9 +162,9 @@ namespace Clinic_Veterinaty_API.Controllers.v1
                     //this business rule is inform the user the data of dog is modified
                     if (client == null)
                     {
-                        return StatusCode(204,"Somente o cachorro foi atualizado");
+                        return StatusCode(200,"Somente o cachorro foi atualizado");
                     }
-                    return StatusCode(204,"O cliente ou cachorro foi atualizado");
+                    return StatusCode(200,"O cliente ou cachorro foi atualizado");
                 }
                 else
                 {                    

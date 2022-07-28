@@ -70,14 +70,17 @@ namespace Clinic_Veterinaty_API.Controllers.v1
                     var searchVet = await _vetRepository.GetByIdVetAsync(CRMV);
                     if(searchVet != null)                         
                         return StatusCode(400,"The id vet already exist, try send new id");
-                
+
+                    var email = HttpContext.User.Claims.FirstOrDefault(claim => claim.Type
+                                .Equals("email",StringComparison.InvariantCultureIgnoreCase)).Value;
+
             
                     Vet vet = new();            
                     vet.CRMV = CRMV;
                     vet.Name = vetDTO.Name;
                     vet.LastName = vetDTO.LastName;
                     vet.Address = vetDTO.Address;
-                    vet.Email = vetDTO.Email;
+                    vet.Email = email;
                     vet.Status = true;
 
                     _vetRepository.Add(vet);
