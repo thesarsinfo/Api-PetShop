@@ -10,6 +10,7 @@ namespace Clinic_Veterinaty_API.DTO
         public int DogId { get; set; }
         [Range(0,300,ErrorMessage ="O campo peso do cachorro deve ser entre 0 a 300 kilos")]
         public double Weight { get; set; }   
+        public DateTime Hour { get; set; }
         
         [MinLength(3,ErrorMessage ="O campo ultimo diagnostico deve conter no mínimo 3 caracteres")]
         public string LastDiagnosis { get; set; }        

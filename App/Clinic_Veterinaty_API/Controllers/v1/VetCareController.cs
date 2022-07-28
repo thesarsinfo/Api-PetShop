@@ -11,7 +11,7 @@ namespace Clinic_Veterinaty_API.Controllers.v1
 {
     [ApiController]
     [Route("api/v1/[controller]")]
-    [Authorize]
+    //[Authorize]
     public class VetCareController : ControllerBase
     {
        
@@ -25,8 +25,8 @@ namespace Clinic_Veterinaty_API.Controllers.v1
         public async Task<IActionResult> GetAllVetCalls()
         {
             try {
-                var userCargo = HttpContext.User.Claims.FirstOrDefault(c => c.Value == "client");
-
+                var userCargo =  HttpContext.User.Claims.FirstOrDefault(c => c.Type.ToString()
+                                    .Equals("roleJob",StringComparison.InvariantCultureIgnoreCase));
                 if(userCargo.Value.Equals("client"))
                 {
                     var id = HttpContext.User.Claims.FirstOrDefault(claim => claim.Type.ToString()
@@ -120,23 +120,24 @@ namespace Clinic_Veterinaty_API.Controllers.v1
                 vetCall.Dogs = dog ?? vetCall.Dogs;
                 vetCall.Age = age != 0 ? age : vetCall.Age;
                 vetCall.Weight = vetCareUpdateDTO.Weight != 0 ? vetCareUpdateDTO.Weight : vetCall.Weight;
+                vetCall.Hour = vetCareUpdateDTO.Hour.Equals(DateTime.Parse("01/01/0001 00:00:00")) 
+                                        ?  vetCall.Hour :  vetCareUpdateDTO.Hour;
                 vetCall.LastDiagnosis = vetCareUpdateDTO.LastDiagnosis ?? vetCall.LastDiagnosis;
                 vetCall.Coments = vetCareUpdateDTO.Coments ?? vetCall.Coments;
 
-                if(!vetCareUpdateDTO.Weight.Equals(null))
+                if(vetCareUpdateDTO.Weight != 0 )
                 {
-                   var dogUpdate = _vetCareRepository.GetDogByClientIdDogId(vetCall.Clients.CPF,vetCall.Dogs.Id);
+                   var dogUpdate = await _vetCareRepository.GetDogByClientIdDogId(vetCall.Clients.CPF,vetCall.Dogs.Id);
                     _vetCareRepository.Update(dogUpdate);
                     await _vetCareRepository.SaveChangesAsync();
                 }
-                _vetCareRepository.Add(vetCall);
+                _vetCareRepository.Update(vetCall);
                 await _vetCareRepository.SaveChangesAsync();                
-                return StatusCode(204,"Cliente atualizado com sucesso");
+                return StatusCode(200,"Cliente atualizado com sucesso");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return StatusCode(500,"Error de processamento interno");
-
+                return StatusCode(500,"Erro de processamento interno" + ex.Message);
             }
         }
 

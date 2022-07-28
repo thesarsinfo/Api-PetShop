@@ -154,7 +154,10 @@ namespace Clinic_Veterinaty_API.Controllers.v1
                     dog.DogBreed = dogUpdateDTO.DogBreed ?? dog.DogBreed;
                     dog.DogWeight = dogUpdateDTO.DogWeight != 0 ? dogUpdateDTO.DogWeight: dog.DogWeight;
                     dog.DogHeight = dogUpdateDTO.DogHeight != 0 ? dogUpdateDTO.DogHeight: dog.DogHeight;
-                    dog.BirthDate = dogUpdateDTO.BirthDate.Equals(null) ? dogUpdateDTO.BirthDate : dog.BirthDate;
+                    
+                    dog.BirthDate = dogUpdateDTO.BirthDate.Equals(DateTime.Parse("01/01/0001 00:00:00")) 
+                                        ?  dog.BirthDate :  dogUpdateDTO.BirthDate;
+                    
                     dog.Clients = client ?? dog.Clients;
 
                      _dogRepository.Update(dog);

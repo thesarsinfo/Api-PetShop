@@ -20,8 +20,8 @@ namespace Clinic_Veterinaty_API.DTO
         
         [Range(0,300,ErrorMessage ="A altura do cachorro deve ser entre 0 até 300 cm")]
         public double DogHeight {get;set;}   
-        [Required(ErrorMessage ="A data de nascimento é requerida")]      
-        public DateTime BirthDate { get; set; }        
+        // [Required(ErrorMessage ="A data de nascimento do cachorro")]
+        public DateTime  BirthDate { get; set; } 
         public ulong ClientId { get; set; }
 
     }

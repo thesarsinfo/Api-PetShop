@@ -129,6 +129,3 @@ c:\Users\TESV\OneDrive - GFT Technologies SE\Documents\Treinamento GFT\API\Desaf
 c:\Users\TESV\OneDrive - GFT Technologies SE\Documents\Treinamento GFT\API\DesafioGftApi\desafioapi\App.Xunit\Veterinary_Clinic_Test\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 c:\Users\TESV\OneDrive - GFT Technologies SE\Documents\Treinamento GFT\API\DesafioGftApi\desafioapi\App.Xunit\Veterinary_Clinic_Test\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 c:\Users\TESV\OneDrive - GFT Technologies SE\Documents\Treinamento GFT\API\DesafioGftApi\desafioapi\App.Xunit\Veterinary_Clinic_Test\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
-c:\Users\TESV\OneDrive - GFT Technologies SE\Documents\Treinamento GFT\apitgithub\Api-PetShop\App.Xunit\Veterinary_Clinic_Test\obj\Debug\net5.0\Veterinary_Clinic_Test.dll
-c:\Users\TESV\OneDrive - GFT Technologies SE\Documents\Treinamento GFT\apitgithub\Api-PetShop\App.Xunit\Veterinary_Clinic_Test\obj\Debug\net5.0\ref\Veterinary_Clinic_Test.dll
-c:\Users\TESV\OneDrive - GFT Technologies SE\Documents\Treinamento GFT\apitgithub\Api-PetShop\App.Xunit\Veterinary_Clinic_Test\obj\Debug\net5.0\Veterinary_Clinic_Test.pdb

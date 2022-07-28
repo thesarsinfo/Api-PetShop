@@ -19,7 +19,7 @@ namespace Clinic_Veterinaty_API.Repository
         }
         public async Task<Vet> GetByIdVetAsync(int id)
         {
-            return await _context.Vets.Where(vet => vet.CRMV == id).FirstOrDefaultAsync();
+            return await _context.Vets.Where(vet => vet.CRMV == id && vet.Status == true).FirstOrDefaultAsync();
         }
         public async Task <IEnumerable<Vet>> GetAllVetsAsync()
         {

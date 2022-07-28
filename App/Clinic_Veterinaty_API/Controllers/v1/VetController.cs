@@ -47,7 +47,7 @@ namespace Clinic_Veterinaty_API.Controllers.v1
                 if (vets.Any())
                      return StatusCode(200,vets);
                 else
-                    return StatusCode(404,"A lista de veterinario´não foi encontrado");                   
+                    return StatusCode(404,"A lista de veterinário não foi encontrado");                   
 
             }
             catch (Exception)
@@ -69,7 +69,7 @@ namespace Clinic_Veterinaty_API.Controllers.v1
                                     .Equals("id",StringComparison.InvariantCultureIgnoreCase)).Value);
                     var searchVet = await _vetRepository.GetByIdVetAsync(CRMV);
                     if(searchVet != null)                         
-                        return StatusCode(400,"The id vet already exist, try send new id");
+                        return StatusCode(400,"O id do veterinário já existe");
 
                     var email = HttpContext.User.Claims.FirstOrDefault(claim => claim.Type
                                 .Equals("email",StringComparison.InvariantCultureIgnoreCase)).Value;
@@ -85,12 +85,12 @@ namespace Clinic_Veterinaty_API.Controllers.v1
 
                     _vetRepository.Add(vet);
                     return await _vetRepository.SaveChangesAsync()
-                            ? StatusCode(201,"The vet was created successfully")
-                            : StatusCode(400,"There was an error creating the vet");
+                            ? StatusCode(201,"O veterinário foi criado com sucesso")
+                            : StatusCode(400,"Houve um erro ao criar o veterinário");
                 }
                 else
                 {
-                    return StatusCode(403, "Only user with job role vet can register");
+                    return StatusCode(403, "Somente o usuário com cargo vet podem cadastrar os veterinarios");
                 }
             }
             catch (Exception)
@@ -114,16 +114,16 @@ namespace Clinic_Veterinaty_API.Controllers.v1
                     vet.Email = vetDTO.Email ?? vet.Email;
                     _vetRepository.Update(vet);
                     await _vetRepository.SaveChangesAsync();
-                    return Ok("The vet has been updated");
+                    return StatusCode(200,"O veterinário foi atualizado com sucesso");
                 }
                 else
                 {                    
-                    return NotFound(new { msg = "The vet wasn't found" });
+                    return StatusCode(404,"Veterinário não encontrado");
                 }
             }
             catch
             {
-                return StatusCode(500, "Internal Error");
+                return StatusCode(500, "Erro interno");
             }            
         }
         [HttpDelete]
@@ -134,17 +134,18 @@ namespace Clinic_Veterinaty_API.Controllers.v1
                 var vet = await _vetRepository.DeleteVetByIdAsync(id);
                 if(vet == null)
                 {
-                    return NotFound("vet not found");
+                    return StatusCode(404,"Veterinário não encontrado");
                 }
                 vet.Status = false;
                 _vetRepository.Update(vet);
                 await _vetRepository.SaveChangesAsync();
-                return Ok("vet successfully removed");
+                return StatusCode(200,"Veterinário removido com sucesso");
             }
             catch (Exception)
             {
-                Response.StatusCode = 404;
-                return new ObjectResult("");
+                
+                return StatusCode(500, "Erro interno");
+
             }
         }
     }
